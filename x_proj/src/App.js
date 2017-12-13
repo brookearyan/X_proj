@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 
 
+const displayData = (data) => {
+  console.log(data)
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -20,8 +24,7 @@ class App extends Component {
     fetch(proxyUrl + targetUrl + zip + end)
       .then(blob => blob.json())
       .then(data => {
-        console.table(data);
-        document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
+        displayData(data);
         return data;
       })
       .catch(e => {
@@ -29,6 +32,8 @@ class App extends Component {
         return e;
       });
   }
+
+
 
 
   render() {
