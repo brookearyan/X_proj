@@ -2,49 +2,33 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-document.addEventListener("DOMContentLoaded", function() {
-  fetch("https://www.zipcodeapi.com/rest/XlalQH6kVoPgkQjAkDWKj3JTCESokMN134oprDwrEMItEUtlRWi8WHxHiqS8COyz/info.json/10016/degrees",
-    {'Method': "GET",
-    'Headers': {
-      'Content-Type': 'application/json'
-    }})
-  .then(resp =>resp.json())
-  .then(resp => console.log(resp));
-})
-
-async function bad() {
-  try {
-    await Promise.reject('bad');
-  } catch(err) {
-    console.log(err);
-  }
-}
-
-bad();
-
-  // function getCityState() {
-  //   let apiUrl = "https://www.zipcodeapi.com/rest/XlalQH6kVoPgkQjAkDWKj3JTCESokMN134oprDwrEMItEUtlRWi8WHxHiqS8COyz/info.json/10016/degrees";
-  //   fetch(apiUrl).then(resp => console.log(resp));
-  // }
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { zipcode: '' };
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
-
-
-
 
   handleOnSubmit(ev) {
     ev.preventDefault();
     let zip = document.forms["zip-form"]["zip"].value;
     this.setState({ zipcode: zip });
-    console.log(this.state);
-    // getCityState();
+    console.log(zip);
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        targetUrl = 'https://www.zipcodeapi.com/rest/XlalQH6kVoPgkQjAkDWKj3JTCESokMN134oprDwrEMItEUtlRWi8WHxHiqS8COyz/info.json/',
+        end = '/degrees'
+    fetch(proxyUrl + targetUrl + zip + end)
+      .then(blob => blob.json())
+      .then(data => {
+        console.table(data);
+        document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
+        return data;
+      })
+      .catch(e => {
+        console.log(e);
+        return e;
+      });
   }
-
 
 
   render() {
