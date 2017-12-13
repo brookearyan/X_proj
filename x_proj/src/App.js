@@ -1,37 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ZipInfo from './ZipInfo'
 
-
-const displayData = (data) => {
-  console.log(data)
-};
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
-  }
 
-  handleOnSubmit(ev) {
-    ev.preventDefault();
-    let zip = document.forms["zip-form"]["zip"].value;
-    this.setState({ zipcode: zip });
-    console.log(zip);
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://www.zipcodeapi.com/rest/XlalQH6kVoPgkQjAkDWKj3JTCESokMN134oprDwrEMItEUtlRWi8WHxHiqS8COyz/info.json/',
-        end = '/degrees'
-    fetch(proxyUrl + targetUrl + zip + end)
-      .then(blob => blob.json())
-      .then(data => {
-        displayData(data);
-        return data;
-      })
-      .catch(e => {
-        console.log(e);
-        return e;
-      });
-  }
 
 
 
@@ -44,12 +18,8 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
       <div>
-      <br /><br />
-      <form name="zip-form">
-        <input type="text" name="zip"/>
         <br /><br />
-        <input onClick={this.handleOnSubmit} type="submit" value="submit"/>
-      </form>
+        <ZipInfo />
       </div>
       </div>
     );
