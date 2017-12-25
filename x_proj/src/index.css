@@ -3,3 +3,41 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+
+table {
+  display: inline-block;
+  float: left;
+}
+
+.container {
+  width: 100%;
+}
+
+section {
+  width: 100%;
+  height: auto;
+}
+
+article {
+  width: 50%;
+  height: auto;
+  display: inline-block;
+}
+
+.user-form {
+  background-color: red;
+}
+
+.render-zipinfo {
+  background-color: blue;
+}
+
+.submit {
+  background-color: yellow;
+}
+
+.user-info {
+  background-color: magenta;
+}

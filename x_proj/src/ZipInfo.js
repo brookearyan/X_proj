@@ -34,16 +34,18 @@ class ZipInfo extends React.Component {
   render() {
     console.log(this.state);
     return(
-      <section>
-        <form onSubmit={this.clearForm} name="zip-form">
-          <input type="text" name="zip"/>
-          <br /><br />
-          <input onClick={this.handleOnSubmit} type="submit" value="submit"/>
-        </form>
-        <article>
-          <h3>zipcode: {this.state.zipcode}</h3>
-          <h3>city: {this.state.city}</h3>
-          <h3>state: {this.state.state}</h3>
+      <section className="get-zip">
+        <article className="submit">
+          <form onSubmit={this.clearForm} name="zip-form">
+          <tr><td><label> zipcode: </label></td></tr>
+          <tr><td><input type="text" name="zip"/></td></tr>
+          <tr><td><input onClick={this.handleOnSubmit} type="submit" value="submit"/></td></tr>
+          </form>
+        </article>
+        <article className="render-zipinfo">
+          <tr><td>zipcode: {this.state.zipcode}</td></tr>
+          <tr><td>city: {this.state.city}</td></tr>
+          <tr><td>state: {this.state.state}</td></tr>
         </article>
       </section>
     )

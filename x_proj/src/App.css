@@ -12,3 +12,8 @@
 .App-title {
   font-size: 1.5em;
 }
+
+#user-info {
+  display: inline-block;
+  float: right;
+}

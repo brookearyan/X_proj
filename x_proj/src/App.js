@@ -9,16 +9,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to TaxPax</h1>
-        </header>
       <div>
-        <br /><br />
+        <header>
+          <h1>Welcome to TaxPax</h1>
+        </header>
+
+        <table className="container">
         <ZipInfo />
         <User />
-      </div>
-      </div>
+      </table>
+    </div>
     );
   }
 }
