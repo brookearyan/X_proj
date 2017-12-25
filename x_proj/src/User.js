@@ -35,18 +35,19 @@ class User extends React.Component {
       <section className="user">
         <article className="user-form">
           <form onSubmit={this.handleOnSubmit}>
-            <tr><td><label> name: </label></td>
-            <td><input onChange={this.handleOnChangeName} type="text" name="name"/></td></tr>
-            <tr><td><label> annual net income: </label></td>
-            <td><input onChange={this.handleOnChangeIncome}type="integer" name="income"/></td></tr>
-            <tr><td><label> marital status: </label></td>
-            <td><input onChange={this.handleOnChangesStatus} type="checkbox" name="marital_status" value="married"/> married, filing jointly</td><td><input onChange={this.handleOnChangesStatus} type="checkbox" name="marital_status" value="single"/> single </td>
-            <td><input type="submit" value="submit"/></td></tr>
+            <tr><td><label> name: </label>
+            <input onChange={this.handleOnChangeName} type="text" name="name"/></td></tr>
+            <tr><td><label> annual net income: </label>
+            <input onChange={this.handleOnChangeIncome}type="integer" name="income"/></td></tr>
+            <tr><td><label> marital status: </label>
+            <input onChange={this.handleOnChangesStatus} type="checkbox" name="marital_status" value="married"/> married, filing jointly
+            <input onChange={this.handleOnChangesStatus} type="checkbox" name="marital_status" value="single"/> single
+            <input type="submit" value="submit"/></td></tr>
           </form>
         </article>
         <article className="user-info">
           <tr>
-            <td>name: {this.state.name}</td>
+            <td> name: {this.state.name}</td>
           </tr>
           <tr>
             <td>annual net income: {this.state.income}</td>

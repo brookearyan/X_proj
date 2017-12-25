@@ -14,9 +14,9 @@ class App extends Component {
           <h1>Welcome to TaxPax</h1>
         </header>
 
-        <table className="container">
-        <ZipInfo />
+      <table className="container">
         <User />
+        <ZipInfo />
       </table>
     </div>
     );
