@@ -1,16 +1,16 @@
 import React from 'react';
 
-
-
-
 class ZipInfo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { zipcode: '', city: '', state: '' };
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
-
+    this.state = {
+      zipcode: '',
+      city: '',
+      state: ''
+    };
+    this.handleOnSubmit =
+      this.handleOnSubmit.bind(this);
   }
-
 
   handleOnSubmit(ev) {
     ev.preventDefault();
@@ -27,9 +27,9 @@ class ZipInfo extends React.Component {
       .catch(e => {
         console.log(e);
         return e;
-      });
+      }
+    );
   }
-
 
   render() {
     console.log(this.state);
@@ -52,4 +52,4 @@ class ZipInfo extends React.Component {
   }
 }
 
-  export default ZipInfo;
+export default ZipInfo;
