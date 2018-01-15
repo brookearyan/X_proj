@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class User extends React.Component {
   constructor(props) {
@@ -40,8 +39,8 @@ class User extends React.Component {
           <form onSubmit={this.handleOnSubmit}>
             <tr>
               <td>
-                <label> name: </label>
-                <input onChange={this.handleOnChangeName}
+                <label> name: </label><br />
+                <input className="input-box" onChange={this.handleOnChangeName}
                 type="text"
                 name="name"
                 />
@@ -49,8 +48,8 @@ class User extends React.Component {
             </tr>
             <tr>
               <td>
-                <label> annual net income: </label>
-                <input onChange={this.handleOnChangeIncome}
+                <label> annual net income: </label><br />
+                <input className="input-box" onChange={this.handleOnChangeIncome}
                   type="integer"
                   name="income"
                 />
@@ -58,20 +57,21 @@ class User extends React.Component {
             </tr>
             <tr>
               <td>
-                <label> marital status: </label>
+                <label> marital status: </label><br />
                 <input onChange={this.handleOnChangesStatus}
                   type="checkbox"
                   name="marital_status"
                   value="married"
                 />
-                  married, filing jointly
+                  married, filing jointly<br />
                 <input onChange={this.handleOnChangesStatus}
                   type="checkbox"
                   name="marital_status"
                   value="single"
                 />
-                  single
+                  single<br /><br />
                 <input
+                  className="input-button"
                   type="submit"
                   value="submit"
                 />

@@ -38,8 +38,8 @@ class ZipInfo extends React.Component {
         <article className="submit">
           <form onSubmit={this.clearForm} name="zip-form">
           <tr><td><label> zipcode: </label></td></tr>
-          <tr><td><input type="text" name="zip"/></td></tr>
-          <tr><td><input onClick={this.handleOnSubmit} type="submit" value="submit"/></td></tr>
+          <tr><td><input className="input-box" type="text" name="zip"/></td></tr>
+          <tr><td><input className="input-button" onClick={this.handleOnSubmit} type="submit" value="submit"/></td></tr>
           </form>
         </article>
         <article className="render-zipinfo">
