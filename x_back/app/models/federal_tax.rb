@@ -1,0 +1,2 @@
+class FederalTax < ApplicationRecord
+end

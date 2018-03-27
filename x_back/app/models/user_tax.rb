@@ -1,0 +1,2 @@
+class UserTax < ApplicationRecord
+end

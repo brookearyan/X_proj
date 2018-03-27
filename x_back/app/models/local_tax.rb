@@ -1,0 +1,2 @@
+class LocalTax < ApplicationRecord
+end

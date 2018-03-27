@@ -1,0 +1,2 @@
+class StateTax < ApplicationRecord
+end
